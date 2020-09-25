@@ -1,5 +1,4 @@
 (executable
   (name esySolveCudfCommand)
-  (package esy-solve-cudf)
-  (public_name esy-solve-cudf)
+  (public_name esySolveCudfCommand)
   (libraries cudf mccs cmdliner))
