@@ -1,4 +1,4 @@
 (executable
-  (name esySolveCudfCommand)
-  (public_name esySolveCudfCommand)
-  (libraries cudf mccs cmdliner))
+ (name esySolveCudfCommand)
+ (public_name esySolveCudfCommand)
+ (libraries cudf mccs cmdliner))
