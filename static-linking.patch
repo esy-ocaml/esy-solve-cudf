@@ -1,0 +1,10 @@
+diff --git a/bin/dune b/bin/dune
+index ac5daa3..ae42436 100644
+--- a/bin/dune
++++ b/bin/dune
+@@ -1,4 +1,5 @@
+ (executable
+  (name esySolveCudfCommand)
++ (flags (-ccopt -static))
+  (public_name esySolveCudfCommand)
+  (libraries cudf mccs cmdliner))
