@@ -1,4 +1,8 @@
 (executable
  (name esySolveCudfCommand)
- (public_name esySolveCudfCommand)
  (libraries cudf mccs cmdliner))
+
+(install
+ (section libexec)
+ (files
+  (esySolveCudfCommand.exe as esySolveCudfCommand)))
