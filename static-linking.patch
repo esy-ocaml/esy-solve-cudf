@@ -6,6 +6,6 @@ index edd5622..43a96b3 100644
  (executable
   (name esySolveCudfCommand)
 + (flags (-ccopt -static))
-  (libraries cudf mccs cmdliner))
+  (libraries cudf mccs esy.cmdliner))
  
  (install

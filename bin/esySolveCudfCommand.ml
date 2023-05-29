@@ -45,7 +45,7 @@ module Solver = struct
 end
 
 module CommandLineInterface = struct
-  open Cmdliner
+  open Esy_cmdliner
 
   let exits = Term.default_exits
   let docs = Manpage.s_common_options
