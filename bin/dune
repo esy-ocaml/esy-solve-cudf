@@ -1,6 +1,6 @@
 (executable
  (name esySolveCudfCommand)
- (libraries cudf mccs esy.cmdliner))
+ (libraries cudf mccs esy_cmdliner))
 
 (install
  (section libexec)
