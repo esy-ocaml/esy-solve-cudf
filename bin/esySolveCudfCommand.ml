@@ -45,9 +45,8 @@ module Solver = struct
 end
 
 module CommandLineInterface = struct
-  open Esy_cmdliner
+  open Cmdliner
 
-  let exits = Term.default_exits
   let docs = Manpage.s_common_options
   let sdocs = Manpage.s_common_options
   let version = "0.1.0"
@@ -86,15 +85,15 @@ module CommandLineInterface = struct
 
   let defaultCommand =
     let doc = "Solve CUDF dependency problem" in
-    let info = Term.info "esy-solve" ~version ~doc ~sdocs ~exits in
+    let info = Cmd.info "esy-solve" ~version ~doc ~sdocs in
     let cmd timeout strategy filenameIn filenameOut = 
       Solver.runWithFilename ?timeout ?strategy filenameIn filenameOut
     in
-    Term.(ret (const cmd $ timeout $ strategy $ filenameIn $ filenameOut)), info
+    Cmdliner.Cmd.v info Term.(ret (const cmd $ timeout $ strategy $ filenameIn $ filenameOut))
 
   let run () =
     Printexc.record_backtrace true;
-    Term.(exit (eval ~argv:Sys.argv defaultCommand))
+    exit (Cmd.eval ~argv:Sys.argv defaultCommand)
 end
 
 let () = CommandLineInterface.run()
